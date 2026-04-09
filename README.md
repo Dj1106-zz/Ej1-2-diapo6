@@ -2,7 +2,7 @@ En este proyecto se implementan los algoritmos necesarios para calcular los conj
 
 Estos conceptos son fundamentales en la construcción de analizadores sintácticos, especialmente en parsers tipo LL(1), ya que permiten decidir qué producción aplicar en función del símbolo de entrada.
 
-⚙️ Funcionamiento del programa
+ Funcionamiento del programa
 
 El programa recibe una gramática representada como un diccionario en Python y realiza tres procesos principales:
 
@@ -12,7 +12,7 @@ Calcula los conjuntos PREDICT para cada producción
 
 Los resultados se imprimen en consola de forma clara.
 
-🔹 Cálculo de FIRST (Primeros)
+ Cálculo de FIRST (Primeros)
 
 El conjunto FIRST contiene los símbolos terminales con los que puede comenzar una derivación desde un no terminal.
 
@@ -26,7 +26,7 @@ Si toda la producción puede generar ε, entonces se agrega ε
 
 Este proceso se repite en un ciclo hasta que no haya cambios en los conjuntos.
 
-🔹 Cálculo de FOLLOW (Siguientes)
+ Cálculo de FOLLOW (Siguientes)
 
 El conjunto FOLLOW contiene los símbolos que pueden aparecer inmediatamente después de un no terminal.
 
@@ -39,7 +39,7 @@ Si el no terminal está al final de una producción, hereda el FOLLOW del lado i
 
 Se utiliza un ciclo iterativo para propagar correctamente la información hasta estabilizar los resultados.
 
-🔹 Cálculo de PREDICT (Predicción)
+ Cálculo de PREDICT (Predicción)
 
 El conjunto PREDICT se calcula para cada producción y sirve para decidir cuándo usarla.
 
@@ -52,7 +52,7 @@ Si la producción puede generar ε:
 
 Esto permite construir tablas de análisis sintáctico.
 
-🔁 Uso de iteraciones
+ Uso de iteraciones
 
 Los algoritmos de FIRST y FOLLOW utilizan ciclos while porque los valores se van propagando entre los no terminales.
 El proceso continúa hasta que los conjuntos dejan de cambiar, garantizando que el resultado es completo.
